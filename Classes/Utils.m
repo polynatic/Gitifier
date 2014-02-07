@@ -21,7 +21,7 @@ NSString *GitExecutableSetNotification = @"GitExecutableSetNotification";
   for (NSTextCheckingResult *match in matches) {
     NSMutableArray *components = [NSMutableArray arrayWithCapacity: match.numberOfRanges];
 
-    for (NSInteger i = 0; i <= match.numberOfRanges; i++) {
+    for (NSInteger i = 0; i < match.numberOfRanges; i++) {
       // 0 is full range, components start from 1
       [components addObject: [self substringWithRange: [match rangeAtIndex: i]]];
     }
