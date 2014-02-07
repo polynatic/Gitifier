@@ -14,6 +14,7 @@
 #import "Repository.h"
 #import "RepositoryListController.h"
 #import "StatusBarController.h"
+#import "GravatarController.h"
 
 static NSString *SUEnableAutomaticChecksKey = @"SUEnableAutomaticChecks";
 static NSString *SUSendProfileInfoKey       = @"SUSendProfileInfo";
@@ -235,9 +236,43 @@ static NSRegularExpression *gitVersionRegex;
 // --- repository callbacks ---
 
 - (void) commitsReceived: (NSArray *) commits inRepository: (Repository *) repository {
+  BOOL areGravatarIconsEnabled = [GitifierDefaults boolForKey: GravatarIconsEnabledKey];
   BOOL hasNotificationLimit = [GitifierDefaults boolForKey: NotificationLimitEnabledKey];
   NSInteger notificationLimit = [GitifierDefaults integerForKey: NotificationLimitValueKey];
+    
+  if(areGravatarIconsEnabled || YES){
+    //if there are any commits without gravatar data, try to load them first before continuing
+    NSMutableSet *authorsWithoutGravatar = [NSMutableSet set];
 
+    @synchronized(authorsWithoutGravatar) {
+      for (Commit *commit in commits) {
+        if( commit.authorEmail.length>0 && commit.authorGravatar==nil && ![authorsWithoutGravatar containsObject:commit.authorEmail]){
+          
+          NSData *imageData = [[GravatarController sharedController] imageDataForEmailAddress:commit.authorEmail completionHandler:^(NSString *emailAddress, NSData *imageData, NSError *connectionError) {
+            BOOL isGravatarFinished;
+            
+            @synchronized (authorsWithoutGravatar){
+              [authorsWithoutGravatar removeObject:emailAddress];
+              isGravatarFinished = authorsWithoutGravatar.count == 0;
+              commit.authorGravatar=imageData;
+            }
+            
+            if(isGravatarFinished)
+              [self commitsReceived:commits inRepository:repository];
+          }];
+          
+          if(imageData)
+            commit.authorGravatar = imageData;
+          else
+            [authorsWithoutGravatar addObject:commit.authorEmail];
+        }
+      }
+      
+      if(authorsWithoutGravatar.count > 0)
+        return; //this function will be called again after all gravatars have been loaded
+    }
+  }
+  
   NSArray *relevantCommits = [Commit chooseRelevantCommits: commits forUser: self.userEmail];
   NSArray *displayedCommits, *remainingCommits;
 

@@ -17,6 +17,8 @@
 @property (copy) NSString *gitHash;
 @property (copy) NSDate *date;
 @property (strong) Repository *repository;
+@property (strong) NSData *authorGravatar;
+
 
 + (Commit *) commitFromDictionary: (NSDictionary *) dictionary;
 + (NSArray *) chooseRelevantCommits: (NSArray *) commits forUser: (NSString *) userEmail;

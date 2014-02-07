@@ -20,6 +20,7 @@ extern NSString *AskedAboutProfileInfoKey;
 extern NSString *NotificationLimitEnabledKey;
 extern NSString *NotificationLimitValueKey;
 extern NSString *RecentCommitsListLengthKey;
+extern NSString *GravatarIconsEnabledKey;
 
 @interface Defaults : NSObject
 

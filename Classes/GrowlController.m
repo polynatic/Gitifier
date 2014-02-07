@@ -46,7 +46,7 @@ NSString *OtherMessageGrowl           = @"Other message";
   [GrowlApplicationBridge notifyWithTitle: PSFormat(@"%@ – %@", commit.repository.name, commit.authorName)
                               description: commit.subject
                          notificationName: CommitReceivedGrowl
-                                 iconData: [self growlIcon]
+                                 iconData: commit.authorGravatar ? commit.authorGravatar : [self growlIcon]
                                  priority: 0
                                  isSticky: sticky
                              clickContext: commitData];

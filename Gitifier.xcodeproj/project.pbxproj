@@ -64,6 +64,8 @@
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		E9B7076A18A4022D00788422 /* GravatarController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B7076918A4022D00788422 /* GravatarController.m */; };
+		E9B7077118A456B400788422 /* NSImage+RoundedCorners.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B7077018A456B400788422 /* NSImage+RoundedCorners.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -160,7 +162,7 @@
 		58DEC8221246C6B300DE7C7E /* Git.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Git.h; sourceTree = "<group>"; };
 		58DEC8231246C6B300DE7C7E /* Git.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Git.m; sourceTree = "<group>"; };
 		58DEC8241246C6B300DE7C7E /* GitifierAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GitifierAppDelegate.h; sourceTree = "<group>"; };
-		58DEC8251246C6B300DE7C7E /* GitifierAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GitifierAppDelegate.m; sourceTree = "<group>"; };
+		58DEC8251246C6B300DE7C7E /* GitifierAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.objc; path = GitifierAppDelegate.m; sourceTree = "<group>"; tabWidth = 2; };
 		58DEC8261246C6B300DE7C7E /* LoginItemController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginItemController.h; sourceTree = "<group>"; };
 		58DEC8271246C6B300DE7C7E /* LoginItemController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginItemController.m; sourceTree = "<group>"; };
 		58DEC8281246C6B300DE7C7E /* Monitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Monitor.h; sourceTree = "<group>"; };
@@ -181,6 +183,10 @@
 		58E81DC3128B2B7000062F15 /* LinkLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkLabel.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Gitifier-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Gitifier-Info.plist"; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Gitifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gitifier.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9B7076818A4022D00788422 /* GravatarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GravatarController.h; sourceTree = "<group>"; };
+		E9B7076918A4022D00788422 /* GravatarController.m */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.objc; path = GravatarController.m; sourceTree = "<group>"; tabWidth = 2; };
+		E9B7076F18A456B400788422 /* NSImage+RoundedCorners.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+RoundedCorners.h"; sourceTree = "<group>"; };
+		E9B7077018A456B400788422 /* NSImage+RoundedCorners.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+RoundedCorners.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -436,6 +442,10 @@
 				58DEC8331246C6B300DE7C7E /* StatusBarController.m */,
 				58DEC8341246C6B300DE7C7E /* Utils.h */,
 				58DEC8351246C6B300DE7C7E /* Utils.m */,
+				E9B7076818A4022D00788422 /* GravatarController.h */,
+				E9B7076918A4022D00788422 /* GravatarController.m */,
+				E9B7076F18A456B400788422 /* NSImage+RoundedCorners.h */,
+				E9B7077018A456B400788422 /* NSImage+RoundedCorners.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -556,6 +566,7 @@
 				58DEC8371246C6B300DE7C7E /* Defaults.m in Sources */,
 				58DEC8381246C6B300DE7C7E /* Git.m in Sources */,
 				58DEC8391246C6B300DE7C7E /* GitifierAppDelegate.m in Sources */,
+				E9B7076A18A4022D00788422 /* GravatarController.m in Sources */,
 				58DEC83A1246C6B300DE7C7E /* LoginItemController.m in Sources */,
 				58DEC83B1246C6B300DE7C7E /* Monitor.m in Sources */,
 				58DEC83C1246C6B300DE7C7E /* NewRepositoryDialogController.m in Sources */,
@@ -573,6 +584,7 @@
 				5831CCB812EE0EFC008169A7 /* PSCocoaExtensions.m in Sources */,
 				5831CCBC12EE0EFC008169A7 /* PSModel.m in Sources */,
 				5831CCBD12EE0EFC008169A7 /* PSModelManager.m in Sources */,
+				E9B7077118A456B400788422 /* NSImage+RoundedCorners.m in Sources */,
 				584ED6F713B36B940085E65C /* MASPreferencesWindowController.m in Sources */,
 				584ED6FA13B37BF40085E65C /* GeneralPanelController.m in Sources */,
 				584ED6FD13B37F650085E65C /* RepositoriesPanelController.m in Sources */,

@@ -20,6 +20,7 @@ NSString *AskedAboutProfileInfoKey    = @"askedAboutProfileInfo";
 NSString *NotificationLimitEnabledKey = @"notificationLimitEnabled";
 NSString *NotificationLimitValueKey   = @"notificationLimitValue";
 NSString *RecentCommitsListLengthKey  = @"recentCommitsListLength";
+NSString *GravatarIconsEnabledKey     = @"gravatarIconsEnabled";
 
 static NSDictionary *defaultPreferenceValues;
 
@@ -27,7 +28,7 @@ static NSDictionary *defaultPreferenceValues;
 
 + (void) initialize {
   defaultPreferenceValues = @{
-    MonitorIntervalKey: @5,
+    MonitorIntervalKey: @300,
     IgnoreMergesKey: @YES,
     IgnoreOwnCommitsKey: @YES,
     StickyNotificationsKey: @NO,
@@ -36,7 +37,8 @@ static NSDictionary *defaultPreferenceValues;
     KeepWindowsOnTopKey: @YES,
     NotificationLimitEnabledKey: @YES,
     NotificationLimitValueKey: @15,
-    RecentCommitsListLengthKey: @5
+    RecentCommitsListLengthKey: @5,
+    GravatarIconsEnabledKey: @NO
   };
 }
 

@@ -20,7 +20,7 @@
 - (void) startMonitoring {
   if (!timer) {
     NSInteger interval = [GitifierDefaults integerForKey: MonitorIntervalKey];
-    timer = [NSTimer scheduledTimerWithTimeInterval: (interval * 60)
+    timer = [NSTimer scheduledTimerWithTimeInterval: (interval)
                                              target: self
                                            selector: @selector(timerFired)
                                            userInfo: nil
